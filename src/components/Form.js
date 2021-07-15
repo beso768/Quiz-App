@@ -5,10 +5,9 @@ import filter from './functions/filter';
 import SelectInput from './SelectInput';
 
 
-function Form({uniqueCategories,uniquedifficulties,questions,setFiltereditems,filtereditems,setstartQuiz,history}) {
+function Form({uniqueCategories,uniquedifficulties,questions,setFiltereditems,filtereditems}) {
     const [selectedCategory, setselectedCategory] = useState('All');
     const [selecteddifficulty, setSelecteddifficulty] = useState('All');
-
     function handleCategory({target}){
         setselectedCategory(target.value);
     }
@@ -25,12 +24,12 @@ function Form({uniqueCategories,uniquedifficulties,questions,setFiltereditems,fi
             <h2>Total questions {filtereditems.length} </h2>
             <div className="selectWrapper">
                 <SelectInput 
-                    label="trivia-categories" 
+                    label="categories" 
                     onChange={handleCategory} 
                     value={selectedCategory}
                     uniqueItems={uniqueCategories} />
                 <SelectInput 
-                    label="trivia-difficulty" 
+                    label="difficulty" 
                     onChange={handledifficulty} 
                     value={selecteddifficulty} 
                     uniqueItems={uniquedifficulties} />

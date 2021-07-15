@@ -16,9 +16,7 @@ function App() {
   const [filtereditems, setFiltereditems] = useState([]);
   const [uniqueCategories, setUniqueCategories] = useState([]); //unique category items
   const [uniquedifficulties, setUniquedifficulties] = useState([]);//uniqeu difficulty items
-  const [startQuiz, setstartQuiz] = useState(false);
 
-  
   useEffect(() => {
     httpService(setQuestions,setFiltereditems,setUniqueCategories,setUniquedifficulties) //get data from server
   }, []);
@@ -36,8 +34,6 @@ function App() {
             questions={questions}
             filtereditems={filtereditems}
             setFiltereditems={setFiltereditems}
-            setstartQuiz={setstartQuiz}
-            history={useHistory}
           />
         </Route>
         <Route to="/not-found">
