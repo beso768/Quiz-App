@@ -9,26 +9,17 @@ function Form({uniqueCategories,uniquedifficulties,questions,setFiltereditems,fi
     const [selectedCategory, setselectedCategory] = useState('All');
     const [selecteddifficulty, setSelecteddifficulty] = useState('All');
 
-
     function handleCategory({target}){
         setselectedCategory(target.value);
     }
-
-
     function handledifficulty({target}){
         setSelecteddifficulty(target.value); 
     }
-
     useEffect(() => {
         if(questions.length > 0){
-            filter(selecteddifficulty,selectedCategory,setFiltereditems,questions)
+            filter(selecteddifficulty,selectedCategory,setFiltereditems,questions);
         }
-    }, [selectedCategory,selecteddifficulty])
-
-    function handleSubmit(e){
-        e.preventDefault(); 
-    }
-
+    }, [selectedCategory,selecteddifficulty]);
     return(
         <div className="filterForm">
             <h2>Total questions {filtereditems.length} </h2>

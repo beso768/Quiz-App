@@ -3,8 +3,6 @@ import { useEffect,useState } from "react"
 import {
   Switch,
   Route,
-  Redirect,
-  BrowserRouter,
   useHistory
 } from "react-router-dom";
 import Form from './components/Form'
